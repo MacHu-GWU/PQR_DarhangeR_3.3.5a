@@ -830,4 +830,27 @@ while buff do
 end
   i = i + 1;
   buff,_,_,count,bufftype,duration = UnitDebuff(&amp;quot;player&amp;quot;, i)
-end</Lua><RecastDelay>150</RecastDelay><Target>Player</Target><CancelChannel>False</CancelChannel><LuaBefore></LuaBefore><LuaAfter></LuaAfter></Ability></PALADIN>
+end</Lua><RecastDelay>150</RecastDelay><Target>Player</Target><CancelChannel>False</CancelChannel><LuaBefore></LuaBefore><LuaAfter></LuaAfter></Ability><Ability><Name>P:SoCr or SoV / SoL v1</Name><Default>false</Default><SpellID>0</SpellID><Actions></Actions><Lua>if glyph(56416)
+	and IsSpellKnown(53736) then
+	if not (SoCr or SoV or SoL)
+	and AOE() == false then
+		CastSpellByID(53736)
+		return true
+	end
+end
+
+if glyph(56416)
+	and IsSpellKnown(31801) then
+	if not (SoV or SoCr or SoL)
+	and AOE() == false then
+		CastSpellByID(31801)
+		return true
+	end
+end
+
+if not SoL
+and not glyph(56416) 
+and AOE() == false then
+		CastSpellByID(20165)
+		return true
+end</Lua><RecastDelay>0</RecastDelay><Target>Player</Target><CancelChannel>False</CancelChannel><LuaBefore></LuaBefore><LuaAfter></LuaAfter></Ability></PALADIN>
